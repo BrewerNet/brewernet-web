@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "test": "vitest",
+    "test": "vitest --watch=false",
     "prepare": "husky"
   },
   "dependencies": {
