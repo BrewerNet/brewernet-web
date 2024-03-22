@@ -1,19 +1,11 @@
-import "./globals.css"
-import { Inter as FontSans } from "next/font/google"
+import { ReactNode } from 'react'
 
-import { cn } from "@/lib/utils"
-import { ReactNode } from "react"
-import { Root } from "postcss"
+import './globals.css'
 
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
-
-const RootLayout = ({ children }:{children: ReactNode}) => {
+const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang='en'>
+      <body>{children}</body>
     </html>
   )
 }
