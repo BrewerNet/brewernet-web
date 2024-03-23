@@ -1,5 +1,6 @@
-import { PageProps } from '@/lib/interfaces'
 import Link from 'next/link'
+
+import { PageProps } from '@/lib/interfaces'
 
 const Page: React.FC<PageProps> = () => {
   return (

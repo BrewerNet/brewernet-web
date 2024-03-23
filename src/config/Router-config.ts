@@ -1,8 +1,9 @@
-import Contact from '@/app/contact/page'
-import BMAC from '@/app/buy-me-a-coffee/page'
-import TCB from '@/app/the-coffee-bean/page'
-import HOME from '@/app/page'
 import { PageProps } from '@/lib/interfaces'
+
+import BMAC from '@/app/buy-me-a-coffee/page'
+import Contact from '@/app/contact/page'
+import HOME from '@/app/page'
+import TCB from '@/app/the-coffee-bean/page'
 
 interface Route {
   name: string
