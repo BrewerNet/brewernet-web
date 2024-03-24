@@ -1,0 +1,24 @@
+.contactWrapper {
+  @apply text-center
+  py-10
+  px-2
+  md:px-10
+  md:py-10;
+}
+
+.contactLogo {
+  @apply flex
+  items-center
+  justify-center
+  flex-row
+  my-5
+  md:my-10
+}
+
+.contactInfoWrapper {
+  @apply my-10 
+}
+
+.contactSelectedButton {
+  @apply bg-main
+}
