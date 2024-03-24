@@ -5,6 +5,8 @@ import Link from 'next/link'
 
 import { PageProps } from '@/lib/interfaces'
 
+import Navbar from './Navbar/Navbar'
+
 const Page: React.FC<PageProps> = () => {
   return (
     <div>
