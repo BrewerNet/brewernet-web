@@ -2,10 +2,14 @@ import { ReactNode } from 'react'
 
 import './globals.css'
 
+import Providers from './Providers'
+
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <Providers>
+        <body>{children}</body>
+      </Providers>
     </html>
   )
 }
