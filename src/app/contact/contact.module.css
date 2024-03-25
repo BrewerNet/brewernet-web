@@ -42,13 +42,11 @@
 
 .contactButton {
   @apply flex-1
-  text-white
   rounded-md;
 }
 
 .contactSelectedButton {
   @apply flex-1
-text-white
 bg-main
   rounded-2xl
   w-full

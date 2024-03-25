@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/Image'
+import Image from 'next/image'
 import styles from './contact.module.css'
-import { TypographyH1, TypographyH4, TypographyParagraph } from '../../components/shared/Typography/Typography.tsx'
+import { TypographyH1, TypographyH4, TypographyParagraph } from '@/components/shared/Typography/Typography'
 import { PageProps } from '@/lib/interfaces'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleInfo, faHandshake } from '@fortawesome/free-solid-svg-icons'
@@ -12,15 +12,22 @@ import { faCircleInfo, faHandshake } from '@fortawesome/free-solid-svg-icons'
 const ContactPage: React.FC<PageProps> = () => {
   const [order, setOrder] = useState([0, 1, 2])
   const [selected, setSelected] = useState('query')
-  const handleButtonClick = button => {
+  const handleButtonClick = (button: string) => {
     setSelected(button)
+  }
+
+  type DescriptionType = {
+    [key: string]: { desc: string; email: string }
   }
 
   useEffect(() => {
     const interval = setInterval(() => {
       setOrder(prevOrder => {
         const newOrder = [...prevOrder]
-        newOrder.push(newOrder.shift())
+        const firstElement = newOrder.shift()
+        if (typeof firstElement === 'number') {
+          newOrder.push(firstElement)
+        }
         return newOrder
       })
     }, 5000)
@@ -34,7 +41,7 @@ const ContactPage: React.FC<PageProps> = () => {
     { href: '/buy-me-a-coffee', src: '/logo/bmac-logo.png', alt: "BMaC's Favicon" }
   ]
 
-  const description = {
+  const description: DescriptionType = {
     query: {
       desc: 'At BrewerNet, your journey is important to us. Facing challenges or have questions about "The Coffee Bean" Discord community or the "Buy Me a Coffee" app? Our Query Section is designed for you. Here, you can seek guidance, gain insights, and find answers from our dedicated team. We understand the hurdles of transitioning from academia to professional life and are committed to smoothing your path with prompt and helpful responses. Reach out to us – let\'s make connections that propel your career forward.',
       email: 'query@brewernet.io'
@@ -60,10 +67,10 @@ const ContactPage: React.FC<PageProps> = () => {
       <div className={styles.contactInfoWrapper}>
         <div className={styles.contactInfoButtons}>
           <button onClick={() => handleButtonClick('query')} className={selected === 'query' ? styles.contactSelectedButton : styles.contactButton}>
-            <TypographyH4>Query</TypographyH4>
+            <TypographyH4 className='text-white'>Query</TypographyH4>
           </button>
           <button onClick={() => handleButtonClick('affiliate')} className={selected === 'affiliate' ? styles.contactSelectedButton : styles.contactButton}>
-            <TypographyH4>Affiliate</TypographyH4>
+            <TypographyH4 className='text-white'>Affiliate</TypographyH4>
           </button>
         </div>
         <div className={styles.contactInfoText}>
