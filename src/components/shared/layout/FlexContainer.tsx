@@ -1,4 +1,4 @@
-import cx from 'classNames'
+import cx from 'classnames'
 import React from 'react'
 
 import { ContainerProps } from '@/lib/interfaces'
