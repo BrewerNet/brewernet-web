@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { TypographyProps } from '@/lib/interfaces'
 
 export const TypographyH1: React.FC<TypographyProps> = ({ children, className }) => {

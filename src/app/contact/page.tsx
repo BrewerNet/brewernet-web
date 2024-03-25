@@ -1,13 +1,16 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import styles from './contact.module.css'
-import { TypographyH1, TypographyH4, TypographyParagraph } from '@/components/shared/Typography/Typography'
-import { PageProps } from '@/lib/interfaces'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleInfo, faHandshake } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Image from 'next/image'
+import Link from 'next/link'
+import React, { useEffect,useState } from 'react'
+
+import styles from './contact.module.css'
+
+import { PageProps } from '@/lib/interfaces'
+
+import { TypographyH1, TypographyH4, TypographyParagraph } from '@/components/shared/Typography/Typography'
 
 const ContactPage: React.FC<PageProps> = () => {
   const [order, setOrder] = useState([0, 1, 2])
