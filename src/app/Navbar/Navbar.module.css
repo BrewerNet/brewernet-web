@@ -1,0 +1,48 @@
+.navBar{
+  @apply
+  h-[10%] 
+  w-full 
+  flex 
+  flex-row 
+  items-center 
+  justify-between 
+  px-2 
+  py-1;
+}
+
+.buttonWrapper{
+  @apply
+  w-[40%] 
+  h-fit 
+  flex 
+  flex-row 
+  items-center 
+  justify-evenly;
+}
+
+.buttons{
+  @apply
+  w-[70%] 
+  h-fit 
+  flex 
+  flex-row 
+  justify-evenly 
+  font-[Mitr] 
+  font-semibold 
+  max-md:hidden 
+  md:visible;
+}
+
+.menu{
+  @apply
+  absolute 
+  w-full 
+  h-full 
+  bg-slate-400 
+  top-0 
+  right-0 
+  flex 
+  items-center 
+  justify-center
+  flex-col;
+}

@@ -2,10 +2,12 @@ import Link from 'next/link'
 
 import { PageProps } from '@/lib/interfaces'
 
+import Hero from '../components/shared/Hero/Hero'
+
 const Page: React.FC<PageProps> = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <Hero />
       <Link href='/about'>About</Link>
     </div>
   )

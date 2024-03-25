@@ -1,0 +1,57 @@
+.heroSection {
+  @apply h-fit
+  w-full
+  fixed;
+}
+
+.textContainer {
+  @apply flex 
+  flex-col 
+  items-center 
+  justify-evenly 
+  h-[52vw] 
+  w-full 
+  z-10 
+  px-7 
+  text-white;
+}
+
+.heroImg {
+  @apply z-0 
+  absolute 
+  top-0 
+  left-0 
+  w-full 
+  rounded-b-2xl;
+}
+
+.name{
+  @apply
+  z-10 
+  text-lg 
+  font-bold 
+  md:text-2xl 
+  lg:font-extrabold 
+  lg:text-4xl
+  ;
+}
+
+.slogan{
+  @apply
+  z-10 
+  text-lg 
+  font-bold 
+  md:text-3xl 
+  lg:font-extrabold 
+  lg:text-5xl
+  ;
+}
+
+.description{
+  @apply
+  z-10 
+  text-xs 
+  text-center 
+  md:text-lg 
+  lg:text-2xl;
+}

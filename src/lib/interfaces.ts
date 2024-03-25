@@ -9,3 +9,8 @@ export interface ContainerProps {
 export interface TypographyProps extends ContainerProps {
   classname?: string
 }
+
+export interface TypographyProps {
+  children: React.ReactNode
+  className?: string
+}
