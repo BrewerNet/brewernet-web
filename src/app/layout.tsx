@@ -7,14 +7,14 @@ import Providers from './Providers'
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <html lang='en'>
-      <Providers>
-        <div>
+    <Providers>
+      <html lang='en'>
+        <body>
           <Navbar />
-          <body>{children}</body>
-        </div>
-      </Providers>
-    </html>
+          <div>{children}</div>
+        </body>
+      </html>
+    </Providers>
   )
 }
 export default RootLayout

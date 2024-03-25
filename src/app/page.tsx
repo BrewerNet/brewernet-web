@@ -8,7 +8,6 @@ const Page: React.FC<PageProps> = () => {
   return (
     <div>
       <Hero />
-      <h1>Home</h1>
       <Link href='/about'>About</Link>
     </div>
   )
