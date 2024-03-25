@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/Image'
 import styles from './contact.module.css'
@@ -10,12 +10,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleInfo, faHandshake, faSolid } from '@fortawesome/free-solid-svg-icons'
 
 const ContactPage: React.FC<PageProps> = () => {
+  const [order, setOrder] = useState([0, 1, 2])
   const [selected, setSelected] = useState('query')
   const handleButtonClick = button => {
     setSelected(button)
   }
 
-  // query or affiliate
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setOrder(prevOrder => {
+        const newOrder = [...prevOrder]
+        newOrder.push(newOrder.shift())
+        return newOrder
+      })
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  const images = [
+    { href: '/the-coffee-bean', src: '/logo/tcb-logo.png', alt: "TCB's Favicon" },
+    { href: '/', src: '/logo/brewernet-logo.png', alt: "BrewerNet's Favicon" },
+    { href: '/buy-me-a-coffee', src: '/logo/bmac-logo.png', alt: "BMaC's Favicon" }
+  ]
+
   const description = {
     query: {
       desc: 'At BrewerNet, your journey is important to us. Facing challenges or have questions about "The Coffee Bean" Discord community or the "Buy Me a Coffee" app? Our Query Section is designed for you. Here, you can seek guidance, gain insights, and find answers from our dedicated team. We understand the hurdles of transitioning from academia to professional life and are committed to smoothing your path with prompt and helpful responses. Reach out to us – let\'s make connections that propel your career forward.',
@@ -31,15 +49,13 @@ const ContactPage: React.FC<PageProps> = () => {
     <div className={styles.contactWrapper}>
       <TypographyH1 className='text-center'>Contact</TypographyH1>
       <div className={styles.contactLogo}>
-        <Link href='/the-coffee-bean'>
-          <Image src='/logo/tcb-logo.png' alt="TCB's Favicon" width={200} height={200}></Image>
-        </Link>
-        <Link href='/'>
-          <Image src='/logo/brewernet-logo.png' alt="BrewerNet's Favicon" width={200} height={200}></Image>
-        </Link>
-        <Link href='/buy-me-a-coffee'>
-          <Image src='/logo/bmac-logo.png' alt="BMaC's Favicon" width={200} height={200}></Image>
-        </Link>
+        {order.map((index, i) => (
+          <div key={index} className={styles.imageTransition}>
+            <Link href={images[index].href}>
+              <Image src={images[index].src} alt={images[index].alt} width={i === 1 ? 300 : 200} height={i === 1 ? 300 : 200} />
+            </Link>
+          </div>
+        ))}
       </div>
       <div className={styles.contactInfoWrapper}>
         <div className={styles.contactInfoButtons}>
@@ -56,11 +72,11 @@ const ContactPage: React.FC<PageProps> = () => {
           ) : (
             <FontAwesomeIcon icon={(faSolid, faHandshake)} className={styles.contactIcon} />
           )}
-          <TypographyParagraph>{description[selected]['desc']}</TypographyParagraph>
+          <TypographyParagraph>{description[selected].desc}</TypographyParagraph>
         </div>
       </div>
-      <button className={styles.contactEmailButton} onClick={() => (window.location.href = 'mailto:example@example.com')}>
-        <TypographyH4>{description[selected]['email']}</TypographyH4>
+      <button className={styles.contactEmailButton} onClick={() => (window.location.href = `${description[selected].email}`)}>
+        <TypographyH4>{description[selected].email}</TypographyH4>
       </button>
     </div>
   )

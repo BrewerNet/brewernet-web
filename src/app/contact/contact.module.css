@@ -14,7 +14,9 @@
   @apply flex
   items-center
   justify-center
-  flex-row;
+  flex-row
+  overflow-x-hidden
+  h-[300px];
 }
 
 .contactInfoWrapper {
@@ -79,4 +81,12 @@ bg-main
   py-2
   px-5
   rounded-md;
+}
+
+.imageTransition {
+  transition: transform 0.5s ease;
+}
+
+.imageTransition img {
+  transition: all 0.5s ease-in-out;
 }
