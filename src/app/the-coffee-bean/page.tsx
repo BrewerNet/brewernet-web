@@ -2,11 +2,11 @@ import React from 'react'
 
 import { PageProps } from '@/lib/interfaces'
 
+import HeroSection from '@/components/shared/HeroSection'
 import RootContainer from '@/components/shared/layout/RootContainer'
 import { TypographyH1 } from '@/components/shared/Typography/Typography'
 
 import TitleWrapper from './components/TitleWrapper'
-import HeroSection from '@/components/shared/HeroSection'
 
 const ContactPage: React.FC<PageProps> = () => {
   return (
