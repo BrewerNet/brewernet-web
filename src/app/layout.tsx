@@ -2,15 +2,19 @@ import { ReactNode } from 'react'
 
 import './globals.css'
 
+import Navbar from './Navbar/Navbar'
 import Providers from './Providers'
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <html lang='en'>
-      <Providers>
-        <body>{children}</body>
-      </Providers>
-    </html>
+    <Providers>
+      <html lang='en'>
+        <body>
+          <Navbar />
+          <div>{children}</div>
+        </body>
+      </html>
+    </Providers>
   )
 }
 export default RootLayout
