@@ -7,7 +7,7 @@ import styles from './contact.module.css'
 import { TypographyH1, TypographyH4, TypographyParagraph } from '../../components/shared/Typography/Typography.tsx'
 import { PageProps } from '@/lib/interfaces'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleInfo, faHandshake, faSolid } from '@fortawesome/free-solid-svg-icons'
+import { faCircleInfo, faHandshake } from '@fortawesome/free-solid-svg-icons'
 
 const ContactPage: React.FC<PageProps> = () => {
   const [order, setOrder] = useState([0, 1, 2])
@@ -70,7 +70,7 @@ const ContactPage: React.FC<PageProps> = () => {
           {selected === 'query' ? (
             <FontAwesomeIcon icon={faCircleInfo} className={`w-12 h-12 ${styles.contactIcon}`} />
           ) : (
-            <FontAwesomeIcon icon={(faSolid, faHandshake)} className={styles.contactIcon} />
+            <FontAwesomeIcon icon={faHandshake} className={styles.contactIcon} />
           )}
           <TypographyParagraph>{description[selected].desc}</TypographyParagraph>
         </div>
