@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 import './globals.css'
 
-import Navbar from './Navbar/Navbar'
+import Navbar from '../components/shared/Navbar/Navbar'
 import Providers from './Providers'
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
