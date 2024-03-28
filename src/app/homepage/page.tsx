@@ -4,12 +4,47 @@ import React from 'react'
 import { PageProps } from '@/lib/interfaces'
 
 import CardContainer from './components/CardContainer'
+import TeamSection from './components/TeamSection'
 import { FlexContainer } from '../../components/shared/layout/FlexContainer'
 import { TypographyH1, TypographyH2, TypographyLarge } from '../../components/shared/Typography/Typography'
 import banner from '../../../public/banner.svg'
 import btcbFaviconC from '../../../public/logo/bmac-favicon-c.png'
 import tcbFaviconC from '../../../public/logo/tcb-favicon-c.png'
+import placeholderImage from '../../../public/placeholderImage.png'
 const Homepage: React.FC<PageProps> = () => {
+  const teamData = [
+    {
+      title: 'Marketing',
+      images: [
+        { src: placeholderImage, alt: 'Marketing Image 1' },
+        { src: placeholderImage, alt: 'Marketing Image 2' },
+        { src: placeholderImage, alt: 'Marketing Image 3' }
+      ]
+    },
+    {
+      title: 'Research',
+      images: [
+        { src: placeholderImage, alt: 'Research Image 1' },
+        { src: placeholderImage, alt: 'Research Image 2' },
+        { src: placeholderImage, alt: 'Research Image 2' }
+      ]
+    },
+    {
+      title: 'IT',
+      images: [
+        { src: placeholderImage, alt: 'IT Image 1' },
+        { src: placeholderImage, alt: 'IT Image 2' },
+        { src: placeholderImage, alt: 'IT Image 2' }
+      ]
+    },
+    {
+      title: 'Design',
+      images: [
+        { src: placeholderImage, alt: 'Design Image 1' },
+        { src: placeholderImage, alt: 'Design Image 2' }
+      ]
+    }
+  ]
   return (
     <div>
       <div className='mb-24'>
@@ -44,6 +79,14 @@ const Homepage: React.FC<PageProps> = () => {
         buttonContent='about BMac'
         isImageOnRight={true}
       />
+      <FlexContainer classname='mb-16 '>
+        <TypographyH1>Team</TypographyH1>
+      </FlexContainer>
+      <div>
+        {teamData.map(team => (
+          <TeamSection key={team.title} title={team.title} images={team.images} />
+        ))}
+      </div>
     </div>
   )
 }
