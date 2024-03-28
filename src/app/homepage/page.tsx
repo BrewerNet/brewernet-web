@@ -4,7 +4,7 @@ import React from 'react'
 import { PageProps } from '@/lib/interfaces'
 
 import { FlexContainer } from '@/components/shared/layout/FlexContainer'
-
+import Footer from '@/components/shared/Footer/Footer'
 import { TypographyH1 } from '../../components/shared/Typography/Typography'
 import banner from '../../../public/banner.svg'
 const Homepage: React.FC<PageProps> = () => {
@@ -23,6 +23,7 @@ const Homepage: React.FC<PageProps> = () => {
       <FlexContainer classname='mb-24 '>
         <TypographyH1>Product</TypographyH1>
       </FlexContainer>
+      <Footer />
     </div>
   )
 }
