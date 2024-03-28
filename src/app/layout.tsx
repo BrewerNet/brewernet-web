@@ -2,8 +2,10 @@ import { ReactNode } from 'react'
 
 import './globals.css'
 
-import Navbar from '../components/shared/Navbar/Navbar'
+import Footer from '@/components/shared/Footer'
+
 import Providers from './Providers'
+import Navbar from '../components/shared/Navbar/Navbar'
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
@@ -12,6 +14,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
         <body>
           <Navbar />
           <div>{children}</div>
+          <Footer />
         </body>
       </html>
     </Providers>
