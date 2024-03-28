@@ -8,8 +8,6 @@ import Homepage from './homepage/page'
 const Page: React.FC<PageProps> = () => {
   return (
     <div>
-      {/* <Hero />
-      <Link href='/about'>About</Link> */}
       <Homepage/>
     </div>
   )
