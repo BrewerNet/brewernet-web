@@ -1,7 +1,7 @@
 .heroSection {
   @apply h-fit
   w-full
-  fixed;
+  static;
 }
 
 .textContainer {

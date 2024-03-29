@@ -1,9 +1,10 @@
 import { PageProps } from '@/lib/interfaces'
 
 import BMAC from '@/app/buy-me-a-coffee/page'
-import Contact from '@/app/contact/page'
+import CONTACT from '@/app/contact/page'
 import HOME from '@/app/page'
 import TCB from '@/app/the-coffee-bean/page'
+
 
 interface Route {
   name: string
@@ -34,14 +35,14 @@ export const PUBLIC_ROUTE_CONFIG: Record<string, Route> = {
   },
   [ROUTE_KEY.BUY_ME_A_COFFEE]: {
     name: 'buy me a coffee',
-    title: 'BrewerNet | BMAC',
+    title: 'BrewerNet | BMaC',
     path: '/buy-me-a-coffee',
     component: BMAC
   },
   [ROUTE_KEY.CONTACT]: {
     name: 'contact',
-    title: 'BrewerNet | contact',
+    title: 'BrewerNet | Contact Us',
     path: '/contact',
-    component: Contact
+    component: CONTACT
   }
 }

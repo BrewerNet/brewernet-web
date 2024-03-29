@@ -44,5 +44,6 @@
   flex 
   items-center 
   justify-center
+  z-50
   flex-col;
 }
