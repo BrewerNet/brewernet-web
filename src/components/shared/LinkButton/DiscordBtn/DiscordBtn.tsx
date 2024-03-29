@@ -1,5 +1,5 @@
-import React from 'react'
 import Link from 'next/link'
+import React from 'react'
 import { IoLogoDiscord } from "react-icons/io5";
 
 const DiscordBtn= ({ href }: { href: string }) => {
