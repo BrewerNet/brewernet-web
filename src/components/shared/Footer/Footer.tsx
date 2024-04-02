@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { LuFacebook, LuInstagram, LuLinkedin,LuTwitter } from 'react-icons/lu';
+
 import { TypographyLead, TypographySmall } from '../Typography/Typography';
 
 export default function Footer() {

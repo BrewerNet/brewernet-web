@@ -1,4 +1,7 @@
 import React from 'react'
+import { FaBuilding } from "react-icons/fa";
+import { FaHandshakeAngle } from "react-icons/fa6";
+import { TbWorld } from "react-icons/tb";
 
 import { PageProps } from '@/lib/interfaces'
 
@@ -7,14 +10,9 @@ import { FlexContainer } from '@/components/shared/layout/FlexContainer'
 import RootContainer from '@/components/shared/layout/RootContainer'
 import DiscordBtn from '@/components/shared/LinkButton/DiscordBtn'
 import { TypographyH1,TypographyH2, TypographyH4 } from '@/components/shared/Typography/Typography'
-
-import TitleWrapper from '@/components/ui/TitleWrapper'
 import DescriptionBox from '@/components/ui/DescriptionBox'
+import TitleWrapper from '@/components/ui/TitleWrapper'
 import WhatYouCanDoSubSection from '@/components/ui/WhatYouCanDoSubSection'
-
-import { TbWorld } from "react-icons/tb";
-import { FaHandshakeAngle } from "react-icons/fa6";
-import { FaBuilding } from "react-icons/fa";
 
 const TheCoffeeBean: React.FC<PageProps> = () => {
   return (
@@ -30,7 +28,7 @@ const TheCoffeeBean: React.FC<PageProps> = () => {
           <TypographyH2 className='border-b-0 mt-1'>Discord Community For</TypographyH2>
           <TypographyH2 className='border-b-0 mt-1'>Academia and Beyond</TypographyH2>
           <FlexContainer classname='mt-16 gap-10'>
-            <DiscordBtn href={''} />
+            <DiscordBtn href="" />
           </FlexContainer>
         </div>
       </HeroSection>
@@ -43,13 +41,13 @@ const TheCoffeeBean: React.FC<PageProps> = () => {
         <TypographyH2 className='border-b-0 mt-1 text-center'>What you can do</TypographyH2>
         <div className='justify-center flex'>
           <div className='grid grid-cols-1 md:grid-cols-3 w-[1200px] mt-10 gap-5'>
-            <WhatYouCanDoSubSection icon={TbWorld} section_title={'Networking'}> 
+            <WhatYouCanDoSubSection icon={TbWorld} section_title="Networking"> 
               <p>Engage with other job seekers to share strategies and grasp market trends.</p>
             </WhatYouCanDoSubSection>
-            <WhatYouCanDoSubSection icon={FaHandshakeAngle} section_title={'Career Guidance'}>
+            <WhatYouCanDoSubSection icon={FaHandshakeAngle} section_title="Career Guidance">
               <p>Gain advice and insights from seasoned consultants on career queries.</p>
             </WhatYouCanDoSubSection>
-            <WhatYouCanDoSubSection icon={FaBuilding} section_title={'Startup'}> 
+            <WhatYouCanDoSubSection icon={FaBuilding} section_title="Startup"> 
               <p>Access chances to collaborate in startups, benefiting from diverse expertise for project success.</p>
             </WhatYouCanDoSubSection>
           </div>

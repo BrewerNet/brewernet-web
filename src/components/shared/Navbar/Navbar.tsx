@@ -1,10 +1,11 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { LuMenu } from 'react-icons/lu'
 import { RxCross1 } from 'react-icons/rx'
-import Link from 'next/link'
+
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
