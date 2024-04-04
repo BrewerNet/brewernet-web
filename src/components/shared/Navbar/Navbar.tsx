@@ -29,10 +29,10 @@ export default function Navbar() {
     <>
       <div className={styles.navBar}>
         <div className='h-auto w-fit flex flex-row items-center'>
-          <Link href="/homepage">
+          <Link href="/">
             <Image src='/BrewernetIcon.png' alt='IconImage' width={75} height={75}></Image>
           </Link>
-          <Link href="/homepage">
+          <Link href="/">
             <div className='text-lg font-bold pb-1'>Brewernet</div>
           </Link>
         </div>
@@ -45,7 +45,9 @@ export default function Navbar() {
             <div className='px-1'>The Coffee Bean</div>
           </Link>         
           </div>
-          <Image src='/ConnectButton.png' alt='connectButton' width={200} height={75} className='w-fit h-[35px] ' />
+          <Link href='https://discord.gg/xgafrphr'>
+            <Image src='/ConnectButton.png' alt='connectButton' width={200} height={75} className='w-fit h-[35px] ' />
+          </Link>
           <div className='md:hidden' onClick={() => setOpen(!open)}>
             <LuMenu className='h-[35px] w-[35px]' />
           </div>
