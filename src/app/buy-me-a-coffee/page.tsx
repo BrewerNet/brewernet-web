@@ -1,19 +1,19 @@
 import React from 'react'
+import { FaGear } from 'react-icons/fa6';
+import { GiCoffeeCup } from "react-icons/gi";
+import { IoPeople } from "react-icons/io5";
 
 import { PageProps } from '@/lib/interfaces'
-import RootContainer from '@/components/shared/layout/RootContainer';
-import TitleWrapper from '@/components/ui/TitleWrapper';
-import HeroSection from '@/components/shared/HeroSection/HeroSection';
 
-import { TypographyH1, TypographyH4, TypographyH2 } from '@/components/shared/Typography/Typography';
+import HeroSection from '@/components/shared/HeroSection/HeroSection';
 import { FlexContainer } from '@/components/shared/layout/FlexContainer';
-import DescriptionBox from '@/components/ui/DescriptionBox';
-import WhatYouCanDoSubSection from '@/components/ui/WhatYouCanDoSubSection';
-import { FaGear } from 'react-icons/fa6';
-import { IoPeople } from "react-icons/io5";
-import { GiCoffeeCup } from "react-icons/gi";
+import RootContainer from '@/components/shared/layout/RootContainer';
 import AppleStoreBtn from '@/components/shared/LinkButton/AppleStoreBtn';
 import GooglePlayBtn from '@/components/shared/LinkButton/GooglePlayBtn';
+import { TypographyH1, TypographyH2,TypographyH4 } from '@/components/shared/Typography/Typography';
+import DescriptionBox from '@/components/ui/DescriptionBox';
+import TitleWrapper from '@/components/ui/TitleWrapper';
+import WhatYouCanDoSubSection from '@/components/ui/WhatYouCanDoSubSection';
 
 
 const BuyMeACoffee: React.FC<PageProps> = () => {
@@ -29,8 +29,8 @@ const BuyMeACoffee: React.FC<PageProps> = () => {
           <TypographyH2 className='border-b-0 mt-1'>Connecting Over Coffee:</TypographyH2>
           <TypographyH2 className='border-b-0 mt-1'>Networking in the Digital Age</TypographyH2>
           <FlexContainer classname='mt-16 gap-10'>
-            <AppleStoreBtn href={''} />
-            <GooglePlayBtn href={''} />
+            <AppleStoreBtn href="" />
+            <GooglePlayBtn href="" />
           </FlexContainer>
         </div>
       </HeroSection>
@@ -43,13 +43,13 @@ const BuyMeACoffee: React.FC<PageProps> = () => {
         <TypographyH2 className='border-b-0 mt-1 text-center'>What you can do</TypographyH2>
         <div className='justify-center flex'>
           <div className='grid grid-cols-1 md:grid-cols-3 w-[1200px] mt-10 gap-5'>
-            <WhatYouCanDoSubSection icon={FaGear} section_title={'Setup'}> 
+            <WhatYouCanDoSubSection icon={FaGear} section_title="Setup"> 
               <p>Set Up Your Profile and Digital Business Card.</p>
             </WhatYouCanDoSubSection>
-            <WhatYouCanDoSubSection icon={IoPeople} section_title={'Pairing'}>
+            <WhatYouCanDoSubSection icon={IoPeople} section_title="Pairing">
               <p>Connections based on interests, industries, and goals, supporting tag or name searches.</p>
             </WhatYouCanDoSubSection>
-            <WhatYouCanDoSubSection icon={GiCoffeeCup} section_title={'Coffee Chat'}> 
+            <WhatYouCanDoSubSection icon={GiCoffeeCup} section_title="Coffee Chat"> 
               <p>Upon mutual agreement, a shared calendar facilitates easy scheduling of time and location.</p>
             </WhatYouCanDoSubSection>
           </div>
