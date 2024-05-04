@@ -22,7 +22,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen)
 
   return (
-    <div className='flex flex-wrap md:flex-nowrap items-center justify-between px-8 py-4'>
+    <div className='flex flex-wrap md:flex-nowrap items-center justify-between px-8 py-2'>
       <Link href='/' passHref>
         <button className='flex-initial'>
           <Image src='/logo/bn-logo-full.png' alt='BrewerNet Logo' width={100} height={100} />

@@ -16,7 +16,7 @@ function SocialLink({ href, children }) {
 export default function Footer() {
   return (
     <div className='w-full bg-main px-8 py-4'>
-      <div className='flex my-8 items-baseline justify-between'>
+      <div className='flex my-4 items-baseline justify-between'>
         <Link href='/contact'>
           <TypographyH1 className='text-sub hover:text-white flex w-full'>
             Contact Us <GoArrowUpRight className='ml-3 my-auto' />

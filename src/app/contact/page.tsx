@@ -4,7 +4,7 @@ import { faCircleInfo, faHandshake } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect,useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import styles from './contact.module.css'
 
@@ -23,25 +23,25 @@ const ContactPage: React.FC<PageProps> = () => {
     [key: string]: { desc: string; email: string }
   }
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setOrder(prevOrder => {
-        const newOrder = [...prevOrder]
-        const firstElement = newOrder.shift()
-        if (typeof firstElement === 'number') {
-          newOrder.push(firstElement)
-        }
-        return newOrder
-      })
-    }, 5000)
+  //   useEffect(() => {
+  //     const interval = setInterval(() => {
+  //       setOrder(prevOrder => {
+  //         const newOrder = [...prevOrder]
+  //         const firstElement = newOrder.shift()
+  //         if (typeof firstElement === 'number') {
+  //           newOrder.push(firstElement)
+  //         }
+  //         return newOrder
+  //       })
+  //     }, 5000)
 
-    return () => clearInterval(interval)
-  }, [])
+  //     return () => clearInterval(interval)
+  //   }, [])
 
   const images = [
-    { href: '/the-coffee-bean', src: '/logo/tcb-logo.png', alt: "TCB's Favicon" },
-    { href: '/', src: '/logo/brewernet-logo.png', alt: "BrewerNet's Favicon" },
-    { href: '/buy-me-a-coffee', src: '/logo/bmac-logo.png', alt: "BMaC's Favicon" }
+    { href: '/the-coffee-bean', src: '/logo/tcb-bubble-logo.png', alt: "TCB's Favicon" },
+    { href: '/', src: '/logo/bn-legacy.png', alt: "BrewerNet's Favicon" },
+    { href: '/buy-me-a-coffee', src: '/logo/bmac-bubble-logo.png', alt: "BMaC's Favicon" }
   ]
 
   const description: DescriptionType = {
@@ -50,19 +50,19 @@ const ContactPage: React.FC<PageProps> = () => {
       email: 'query@brewernet.io'
     },
     affiliate: {
-      desc: 'Join BrewerNet\'s Affiliate Program and be a part of our mission to enhance career development through networking. This program is a fantastic opportunity for content creators, educators, and career influencers to collaborate with us. By promoting "The Coffee Bean" and "Buy Me a Coffee", you can earn commissions while helping others in their professional journey. Together, we can create meaningful connections and support those transitioning from academic life to the workforce. Sign up now and make an impact with us!',
+      desc: 'Join BrewerNet\'s Affiliate Program and be a part of our mission to enhance career development through networking. This program is a fantastic opportunity for content creators, educators, and career influencers to collaborate with us. By promoting "The Coffee Bean" and "Buy Me a Coffee", you can earn commissions while helping others in their professional journey. Together, we can create meaningful connections and support those transitioning from academic life to the workforce.',
       email: 'affiliate@brewernet.io'
     }
   }
 
   return (
     <div className={styles.contactWrapper}>
-      <TypographyH1 className='text-center'>Contact</TypographyH1>
+      <TypographyH1 className='text-center text-white border-b-4'>Contact</TypographyH1>
       <div className={styles.contactLogo}>
         {order.map((index, i) => (
           <div key={index} className={styles.imageTransition}>
             <Link href={images[index].href}>
-              <Image src={images[index].src} alt={images[index].alt} width={i === 1 ? 300 : 200} height={i === 1 ? 300 : 200} />
+              <Image src={images[index].src} alt={images[index].alt} width={i === 1 ? 400 : 400} height={i === 1 ? 300 : 300} />
             </Link>
           </div>
         ))}
@@ -76,13 +76,11 @@ const ContactPage: React.FC<PageProps> = () => {
             <TypographyH4 className='text-white'>Affiliate</TypographyH4>
           </button>
         </div>
-        <div className={styles.contactInfoText}>
-          {selected === 'query' ? (
-            <FontAwesomeIcon icon={faCircleInfo} className={`w-12 h-12 ${styles.contactIcon}`} />
-          ) : (
-            <FontAwesomeIcon icon={faHandshake} className={styles.contactIcon} />
-          )}
-          <TypographyParagraph>{description[selected].desc}</TypographyParagraph>
+        <div className={styles.contactInfoContainer}>
+          <FontAwesomeIcon icon={selected === 'query' ? faCircleInfo : faHandshake} className={`${styles.backgroundIcon}`} />
+          <div className={styles.contactInfoText}>
+            <TypographyParagraph className='text-white'>{description[selected].desc}</TypographyParagraph>
+          </div>
         </div>
       </div>
       <button className={styles.contactEmailButton} onClick={() => (window.location.href = `${description[selected].email}`)}>
@@ -93,3 +91,6 @@ const ContactPage: React.FC<PageProps> = () => {
 }
 
 export default ContactPage
+
+{
+}
