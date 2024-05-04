@@ -37,7 +37,7 @@ export default function Navbar() {
         <NavButton link='/buy-me-a-coffee'>Buy Me a Coffee</NavButton>
         <NavButton link='/the-coffee-bean'>The Coffee Bean</NavButton>
         <NavButton link='/contact' className='md:border-2 md:border-main md:text-main'>
-          contact us <GoArrowUpRight size={24} className='ml-2 my-auto' />
+          contact us <GoArrowUpRight className='ml-1 my-auto' />
         </NavButton>
       </div>
     </div>

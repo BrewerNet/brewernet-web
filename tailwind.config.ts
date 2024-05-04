@@ -12,10 +12,16 @@ const config = {
         '2xl': '1400px'
       }
     },
+    fontFamily: {
+      sans: ['manrope', 'system-ui'],
+      serif: ['ui-serif', 'Georgia'],
+      display: ['vollkron']
+    },
     extend: {
       colors: {
         main: '#393E95',
         sub: '#F6EF47',
+        gray: '#91907C',
         font: '#272828',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
