@@ -19,7 +19,7 @@ export default function Footer() {
       <div className='flex my-4 items-baseline justify-between'>
         <Link href='/contact'>
           <TypographyH1 className='text-sub hover:text-white flex w-full'>
-            Contact Us <GoArrowUpRight className='ml-3 my-auto' />
+            Contact us <GoArrowUpRight className='ml-3 my-auto' />
           </TypographyH1>
         </Link>
         <div className='flex space-x-4'>
@@ -39,8 +39,8 @@ export default function Footer() {
       </div>
       <hr className='w-full mx-auto bg-white rounded' />
       <div className='flex my-8 md:items-baseline md:flex-row md:justify-between flex-col gap-5 items-center'>
-        <TypographyH3 className='font-display italic text-white'>"Connections Make the World Better"</TypographyH3>
-        <div className='flex flex-nowrap gap-10'>
+        <TypographyH3 className='italic text-white'>"Connections Make the World Better"</TypographyH3>
+        <div className='flex gap-5'>
           <SocialLink href='/buy-me-a-coffee'>Buy Me a Coffee</SocialLink>
           <SocialLink href='/the-coffee-bean'>The Coffee Bean</SocialLink>
         </div>

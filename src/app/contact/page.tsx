@@ -57,7 +57,7 @@ const ContactPage: React.FC<PageProps> = () => {
 
   return (
     <div className={styles.contactWrapper}>
-      <TypographyH1 className='text-center text-white border-b-4'>Contact</TypographyH1>
+      <TypographyH1 className='text-center text-white border-b-4'>Contact us</TypographyH1>
       <div className={styles.contactLogo}>
         {order.map((index, i) => (
           <div key={index} className={styles.imageTransition}>

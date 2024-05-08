@@ -13,9 +13,11 @@ const config = {
       }
     },
     fontFamily: {
-      sans: ['manrope', 'system-ui'],
+      main: ['TT Firs Neue light'],
+      sub: ['Manrope'],
+      display: ['vollkron'],
+      sans: ['Georgia', 'system-ui'],
       serif: ['ui-serif', 'Georgia'],
-      display: ['vollkron']
     },
     extend: {
       colors: {

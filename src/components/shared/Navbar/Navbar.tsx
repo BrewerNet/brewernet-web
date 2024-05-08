@@ -10,7 +10,7 @@ import { GoArrowUpRight } from 'react-icons/go'
 function NavButton({ children, link, className = '' }) {
   return (
     <Link href={link} passHref>
-      <button className={`inline-flex items-center bg-white hover:bg-main hover:text-white py-1 px-4 rounded ${className}`}>
+      <button className={`inline-flex items-center text-main bg-white hover:bg-main hover:text-white py-1 px-4 rounded ${className}`}>
         <TypographyH4 className='flex w-full'>{children}</TypographyH4>
       </button>
     </Link>
@@ -22,7 +22,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen)
 
   return (
-    <div className='flex flex-wrap md:flex-nowrap items-center justify-between px-8 py-2'>
+    <div className='flex flex-wrap md:flex-nowrap items-center justify-between px-8 py-2 bg-white'>
       <Link href='/' passHref>
         <button className='flex-initial'>
           <Image src='/logo/bn-logo-full.png' alt='BrewerNet Logo' width={100} height={100} />
@@ -37,7 +37,7 @@ export default function Navbar() {
         <NavButton link='/buy-me-a-coffee'>Buy Me a Coffee</NavButton>
         <NavButton link='/the-coffee-bean'>The Coffee Bean</NavButton>
         <NavButton link='/contact' className='md:border-2 md:border-main md:text-main'>
-          contact us <GoArrowUpRight className='ml-1 my-auto' />
+          Contact us <GoArrowUpRight className='ml-1 my-auto' />
         </NavButton>
       </div>
     </div>
