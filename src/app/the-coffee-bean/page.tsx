@@ -1,72 +1,77 @@
 import React from 'react'
-import { FaBuilding } from "react-icons/fa";
-import { FaHandshakeAngle } from "react-icons/fa6";
-import { TbWorld } from "react-icons/tb";
-
+import { BsBuildings } from 'react-icons/bs'
+import { BiWorld } from 'react-icons/bi'
+import { FaPeopleGroup } from 'react-icons/fa6'
 import { PageProps } from '@/lib/interfaces'
-
-import HeroSection from '@/components/shared/HeroSection/HeroSection'
-import { FlexContainer } from '@/components/shared/layout/FlexContainer'
-import RootContainer from '@/components/shared/layout/RootContainer'
+import HeaderSection from '@/components/shared/HeaderSection'
+import TitleSection from '@/components/shared/TitleSection'
+import IntroSection from '@/components/shared/IntroSection'
+import InfoCard from '@/components/shared/InfoCard'
 import DiscordBtn from '@/components/shared/LinkButton/DiscordBtn'
-import { TypographyH1,TypographyH2, TypographyH4 } from '@/components/shared/Typography/Typography'
-import DescriptionBox from '@/components/ui/DescriptionBox'
-import TitleWrapper from '@/components/ui/TitleWrapper'
-import WhatYouCanDoSubSection from '@/components/ui/WhatYouCanDoSubSection'
+
+const info = {
+  headerSection: {
+    headerText: 'The Coffee Bean',
+    subHeaderText1: 'Bean there, done that, looking for more.',
+    subHeaderText2: '“The Coffee Bean” is tailored for professional networking.',
+    paragraphText:
+      'Hosted on Discord. It acts as a hub for students to collaborate on innovative startup ideas. A notable component of this community is the mentorship program, where experienced professionals offer guidance on career-related topics to students. ',
+    buttons: [<DiscordBtn href='https://discord.gg/jsm8FA8E' />]
+  },
+  titleSection: {
+    imgSrc: '/logos/tcb-bubble-logo-full.png',
+    imgAlt: "TCB's Logo",
+    titlePart1: 'Connect, Collaborate,',
+    titlePart2: 'Create, Succeed.',
+    paragraphText: 'A Career-Focused Discord Community for Work, Acdamic and Beyond'
+  },
+  infoCards: [
+    {
+      icon: <BiWorld size='50px' />,
+      title: 'Networking',
+      description: 'Connect with job seekers, seniors, and HR to exchange strategies and understand market trends.'
+    },
+    {
+      icon: <FaPeopleGroup size='50px' />,
+      title: 'Career guidance ',
+      description: 'Seek advice and guidance on career decisions and pathways from experienced consultants.'
+    },
+    {
+      icon: <BsBuildings size='50px' />,
+      title: 'Start-up',
+      description: 'Access chances to collaborate in startups, benefiting from diverse expertise for project success.'
+    }
+  ],
+  introSection: {
+    content:
+      '“The Coffee Bean” is set to bridge the gap between university and the workforce. It will offer a place for graduate students to find expert guidance, seek partners for startup ventures, and keep abreast of the latest in job market trends. This platform is definitely going to be an invaluable tool in navigating your career path.',
+    icons: [
+      { src: '/icons/icon-6.png', alt: 'Icon 1' },
+      { src: '/icons/icon-7.png', alt: 'Icon 2' },
+      { src: '/icons/icon-8.png', alt: 'Icon 3' },
+      { src: '/icons/icon-9.png', alt: 'Icon 4' },
+      { src: '/icons/icon-10.png', alt: 'Icon 5' }
+    ],
+    link: 'Join TCB Discord',
+    href: 'https://discord.gg/jsm8FA8E'
+  }
+}
 
 const TheCoffeeBean: React.FC<PageProps> = () => {
   return (
-    <RootContainer>
-      <TitleWrapper>
-        <TypographyH1> The Coffee Bean</TypographyH1>
-        <TypographyH4 className='font-thin italic mt-5'>"Bean there, done that, looking for more"</TypographyH4>
-      </TitleWrapper>
-
-      <HeroSection filepath='/logo/tcb-favicon-c.png' image_description='the-coffee-bean-icon'>
-        <div>
-          <TypographyH2 className='border-b-0 mt-1'>A Student-Focused</TypographyH2>
-          <TypographyH2 className='border-b-0 mt-1'>Discord Community For</TypographyH2>
-          <TypographyH2 className='border-b-0 mt-1'>Academia and Beyond</TypographyH2>
-          <FlexContainer classname='mt-16 gap-10'>
-            <DiscordBtn href="" />
-          </FlexContainer>
-        </div>
-      </HeroSection>
-
-      <DescriptionBox section_title='About'>
-        <p>“The Coffee Bean”, hosted on Discord, is tailored for student networking. It acts as a hub for students to collaborate on innovative startup ideas. A notable component of this community is the mentorship program, where experienced professionals offer guidance on career-related topics to students. Moreover, it functions as an incubator for student-led startups, providing essential advice and assistance in job hunting. Accessible and free of charge, this server is open to students from diverse academic institutions.</p>
-      </DescriptionBox>
-
-      <div className='justify-center mt-20'>
-        <TypographyH2 className='border-b-0 mt-1 text-center'>What you can do</TypographyH2>
-        <div className='justify-center flex'>
-          <div className='grid grid-cols-1 md:grid-cols-3 w-[1200px] mt-10 gap-5'>
-            <WhatYouCanDoSubSection icon={TbWorld} section_title="Networking"> 
-              <p>Engage with other job seekers to share strategies and grasp market trends.</p>
-            </WhatYouCanDoSubSection>
-            <WhatYouCanDoSubSection icon={FaHandshakeAngle} section_title="Career Guidance">
-              <p>Gain advice and insights from seasoned consultants on career queries.</p>
-            </WhatYouCanDoSubSection>
-            <WhatYouCanDoSubSection icon={FaBuilding} section_title="Startup"> 
-              <p>Access chances to collaborate in startups, benefiting from diverse expertise for project success.</p>
-            </WhatYouCanDoSubSection>
-          </div>
+    <div className='bg-white w-full'>
+      <div className='bg-main rounded-b-lg md:rounded-b-3xl md:py-20 py-20 md:px-10 px-5'>
+        <HeaderSection {...info.headerSection} />
+        <hr className='my-10 md:my-20' />
+        <TitleSection {...info.titleSection} />
+        <div className='mt-20 flex flex-col items-center md:items-stretch md:flex-row md:justify-around gap-10'>
+          {info.infoCards.map(card => (
+            <InfoCard key={card.title} {...card} />
+          ))}
         </div>
       </div>
-      
-
-
-      <div className='flex flex-col mt-20 mb-20'>
-        <TypographyH2 className='border-b-0 mt-1 text-center'>What you can do</TypographyH2>
-        <div className='justify-center flex w-full'>
-          <div className='w-[1200px] mt-10 text-center'>
-            <p>“The Coffee Bean” is set to bridge the gap between university and the workforce. It will offer a place for graduate students to find expert guidance, seek partners for startup ventures, and keep abreast of the latest in job market trends. This platform is definitely going to be an invaluable tool in navigating your career path.</p>
-          </div>
-        </div>
-      </div>
-
-
-    </RootContainer>
+      <IntroSection {...info.introSection} />
+    </div>
   )
 }
 

@@ -15,7 +15,7 @@ function SocialLink({ href, children }) {
 
 export default function Footer() {
   return (
-    <div className='w-full bg-main px-8 py-4'>
+    <div className='w-full bg-main py-4 md:px-10 px-5'>
       <div className='flex my-4 items-baseline justify-between'>
         <Link href='/contact'>
           <TypographyH1 className='text-sub hover:text-white flex w-full'>
@@ -26,7 +26,7 @@ export default function Footer() {
           <SocialLink href='https://www.facebook.com'>
             <LuFacebook />
           </SocialLink>
-          <SocialLink href='https://www.linkedin.com'>
+          <SocialLink href='https://www.linkedin.com/company/brewernet/'>
             <LuLinkedin />
           </SocialLink>
           <SocialLink href='https://www.instagram.com'>
@@ -39,7 +39,7 @@ export default function Footer() {
       </div>
       <hr className='w-full mx-auto bg-white rounded' />
       <div className='flex my-8 md:items-baseline md:flex-row md:justify-between flex-col gap-5 items-center'>
-        <TypographyH3 className='italic text-white'>"Connections Make the World Better"</TypographyH3>
+        <TypographyH3 className='italic text-white font-write'>"Connections Make the World Better"</TypographyH3>
         <div className='flex gap-5'>
           <SocialLink href='/buy-me-a-coffee'>Buy Me a Coffee</SocialLink>
           <SocialLink href='/the-coffee-bean'>The Coffee Bean</SocialLink>

@@ -5,11 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-
 import styles from './contact.module.css'
-
 import { PageProps } from '@/lib/interfaces'
-
 import { TypographyH1, TypographyH4, TypographyParagraph } from '@/components/shared/Typography/Typography'
 
 const ContactPage: React.FC<PageProps> = () => {
@@ -23,25 +20,10 @@ const ContactPage: React.FC<PageProps> = () => {
     [key: string]: { desc: string; email: string }
   }
 
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       setOrder(prevOrder => {
-  //         const newOrder = [...prevOrder]
-  //         const firstElement = newOrder.shift()
-  //         if (typeof firstElement === 'number') {
-  //           newOrder.push(firstElement)
-  //         }
-  //         return newOrder
-  //       })
-  //     }, 5000)
-
-  //     return () => clearInterval(interval)
-  //   }, [])
-
   const images = [
-    { href: '/the-coffee-bean', src: '/logo/tcb-bubble-logo.png', alt: "TCB's Favicon" },
-    { href: '/', src: '/logo/bn-legacy.png', alt: "BrewerNet's Favicon" },
-    { href: '/buy-me-a-coffee', src: '/logo/bmac-bubble-logo.png', alt: "BMaC's Favicon" }
+    { href: '/buy-me-a-coffee', src: '/logos/bmac-bubble-logo.png', alt: "BMaC's Favicon" },
+    { href: '/', src: '/logos/bn-logo-white.png', alt: "BrewerNet's Favicon" },
+    { href: '/the-coffee-bean', src: '/logos/tcb-bubble-logo.png', alt: "TCB's Favicon" }
   ]
 
   const description: DescriptionType = {
@@ -62,7 +44,7 @@ const ContactPage: React.FC<PageProps> = () => {
         {order.map((index, i) => (
           <div key={index} className={styles.imageTransition}>
             <Link href={images[index].href}>
-              <Image src={images[index].src} alt={images[index].alt} width={i === 1 ? 400 : 400} height={i === 1 ? 300 : 300} />
+              <Image src={images[index].src} alt={images[index].alt} width={i === 1 ? 150 : 400} height={0}  style={{ width: '100%', height: 'auto' }}/>
             </Link>
           </div>
         ))}

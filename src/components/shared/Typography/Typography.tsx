@@ -13,7 +13,7 @@ export const TypographyH2: React.FC<TypographyProps> = ({ children, className })
 }
 
 export const TypographyH3: React.FC<TypographyProps> = ({ children, className }) => {
-  const combinedClassName = `font-display scroll-m-20 text-2xl font-semibold tracking-tight ${className || ''}`
+  const combinedClassName = `font-main scroll-m-20 text-2xl font-semibold tracking-tight ${className || ''}`
   return <h3 className={combinedClassName}>{children}</h3>
 }
 
@@ -28,7 +28,7 @@ export const TypographyParagraph: React.FC<TypographyProps> = ({ children, class
 }
 
 export const TypographyBlockquote: React.FC<TypographyProps> = ({ children, className }) => {
-  const combinedClassName = `font-display mt-6 border-l-2 pl-6 italic ${className || ''}`
+  const combinedClassName = `font-sans mt-6 border-l-2 pl-6 italic ${className || ''}`
   return <blockquote className={combinedClassName}>{children}</blockquote>
 }
 

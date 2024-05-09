@@ -1,5 +1,5 @@
-import bmacLogo from '../../../public/logo/bmac-app-logo-full.png'
-import tcbLogo from '../../../public/logo/tcb-app-logo-full.png'
+import bmacLogo from '../../../public/logos/bmac-app-logo-full.png'
+import tcbLogo from '../../../public/logos/tcb-app-logo-full.png'
 import placeholderImage from '../../../public/place-holder-image.png'
 
 export const teamData = [
