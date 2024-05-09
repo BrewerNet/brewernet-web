@@ -4,10 +4,11 @@
   text-center
   items-center
   justify-center 
-  py-10
+  py-5
   px-2
   md:px-10
-  md:py-10;
+  md:py-10
+  bg-main;
 }
 
 .contactLogo {
@@ -16,7 +17,7 @@
   justify-center
   flex-row
   overflow-x-hidden
-  h-[300px];
+  h-1/4;
 }
 
 .contactInfoWrapper {
@@ -24,7 +25,8 @@
   flex-col
   justify-center
   items-center
-  my-10
+  pt-10
+  pb-5
   px-10
   w-full;
 }
@@ -35,8 +37,8 @@
   w-full
   h-16
   max-w-2xl
-  bg-main
-  bg-opacity-50
+  bg-gray
+  bg-opacity-40
   rounded-2xl;
 }
 
@@ -47,10 +49,33 @@
 
 .contactSelectedButton {
   @apply flex-1
-bg-main
+bg-gray
   rounded-2xl
   w-full
   h-full;
+}
+
+.contactInfoContainer {
+  @apply relative
+  py-8;
+}
+
+.contactInfoText {
+  @apply relative
+  z-10
+  text-white;
+}
+
+.backgroundIcon {
+  @apply absolute
+  w-60
+  h-60
+  top-1/2
+  left-1/2
+  transform -translate-x-1/2 -translate-y-1/2
+  z-0
+  text-sub
+  text-opacity-10;
 }
 
 .contactInfoText {
@@ -60,25 +85,21 @@ bg-main
   items-center
   text-left
   w-full
-  py-5
+  py-10
   md:flex-row
   md:gap-x-10
   md:max-w-3xl;
 }
 
-.contactIcon {
-  @apply text-main
-  w-1/6
-  h-1/6;
-}
-
 .contactEmailButton {
-  @apply border-2 
-  border-main
-  text-main
-  py-2
-  px-5
-  rounded-md;
+  @apply bg-gray
+  bg-opacity-40
+  text-sub
+  py-4
+  px-8
+  hover:text-main
+  hover:bg-sub
+  rounded-2xl;
 }
 
 .imageTransition {

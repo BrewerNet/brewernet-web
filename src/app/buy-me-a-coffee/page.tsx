@@ -1,74 +1,81 @@
 import React from 'react'
-import { FaGear } from 'react-icons/fa6';
-import { GiCoffeeCup } from "react-icons/gi";
-import { IoPeople } from "react-icons/io5";
+import { FaUserGear } from 'react-icons/fa6'
+import { IoMdPeople } from 'react-icons/io'
+import { MdOutlineCoffee } from 'react-icons/md'
 
 import { PageProps } from '@/lib/interfaces'
 
-import HeroSection from '@/components/shared/HeroSection/HeroSection';
-import { FlexContainer } from '@/components/shared/layout/FlexContainer';
-import RootContainer from '@/components/shared/layout/RootContainer';
-import AppleStoreBtn from '@/components/shared/LinkButton/AppleStoreBtn';
-import GooglePlayBtn from '@/components/shared/LinkButton/GooglePlayBtn';
-import { TypographyH1, TypographyH2,TypographyH4 } from '@/components/shared/Typography/Typography';
-import DescriptionBox from '@/components/ui/DescriptionBox';
-import TitleWrapper from '@/components/ui/TitleWrapper';
-import WhatYouCanDoSubSection from '@/components/ui/WhatYouCanDoSubSection';
+import HeaderSection from '@/components/shared/HeaderSection'
+import InfoCard from '@/components/shared/InfoCard'
+import IntroSection from '@/components/shared/IntroSection'
+import AppleStoreBtn from '@/components/shared/LinkButton/AppleStoreBtn'
+import GooglePlayBtn from '@/components/shared/LinkButton/GooglePlayBtn'
+import TitleSection from '@/components/shared/TitleSection'
 
+const info = {
+  headerSection: {
+    headerText: 'Buy Me a Coffee',
+    subHeaderText1: 'The coffee chat that changes your life.',
+    subHeaderText2: '“Buy Me a Coffee” is a cutting-edge platform',
+    paragraphText:
+      'Merging online networking with in-person meetings, focusing on genuine connections and knowledge sharing through coffee conversations, enhancing both professional and personal growth.',
+    buttons: [<AppleStoreBtn href='https://apple.com' key='apple'/>, <GooglePlayBtn href='https://play.google.com' key='apple'/>]
+  },
+  titleSection: {
+    imgSrc: '/logos/bmac-bubble-logo-full.png',
+    imgAlt: "BMaC's Logo",
+    titlePart1: 'Network, Engage,',
+    titlePart2: 'Share, Innovate.',
+    paragraphText: 'Connecting Over Coffee: Networking in the Digital Age'
+  },
+  infoCards: [
+    {
+      icon: <FaUserGear size='50px' />,
+      title: 'SetUp',
+      description: 'Set up your profile and digital business card to reflect your personality and the purpose of your invitation.'
+    },
+    {
+      icon: <IoMdPeople size='50px' />,
+      title: 'Paring',
+      description: 'Connections based on interests, industries, and goals, supporting tag or name searches.'
+    },
+    {
+      icon: <MdOutlineCoffee size='50px' />,
+      title: 'Coffee Chat',
+      description: 'Upon mutual agreement, a shared calendar facilitates easy scheduling of time and location.'
+    }
+  ],
+  introSection: {
+    content:
+      "Buy Me a Coffee is a cutting-edge digital platform transforming the way people network by merging the ease of online interaction with the genuineness of in-person meetings. In a world increasingly reliant on virtual connections, this platform motivates users, especially students and young professionals, to engage in valuable face-to-face discussions over coffee. It's designed to foster authentic relationships, encourage knowledge exchange, and improve networking and social abilities through informal coffee-based meetups.",
+    icons: [
+      { src: '/icons/icon-1.png', alt: 'Icon 1' },
+      { src: '/icons/icon-2.png', alt: 'Icon 2' },
+      { src: '/icons/icon-3.png', alt: 'Icon 3' },
+      { src: '/icons/icon-4.png', alt: 'Icon 4' },
+      { src: '/icons/icon-5.png', alt: 'Icon 5' }
+    ],
+    link: 'Try BMaC',
+    href: ''
+  }
+}
 
 const BuyMeACoffee: React.FC<PageProps> = () => {
   return (
-    <RootContainer>
-      <TitleWrapper>
-        <TypographyH1> Buy Me a Coffee</TypographyH1>
-        <TypographyH4 className='font-thin italic mt-5'>“A coffee chat that changes your life.”</TypographyH4>
-      </TitleWrapper>
-
-      <HeroSection filepath='/logo/tcb-favicon-c.png' image_description='the-coffee-bean-icon'>
-        <div className='flex flex-col justify-center items-center'>
-          <TypographyH2 className='border-b-0 mt-1'>Connecting Over Coffee:</TypographyH2>
-          <TypographyH2 className='border-b-0 mt-1'>Networking in the Digital Age</TypographyH2>
-          <FlexContainer classname='mt-16 gap-10'>
-            <AppleStoreBtn href="" />
-            <GooglePlayBtn href="" />
-          </FlexContainer>
-        </div>
-      </HeroSection>
-
-      <DescriptionBox section_title='About'>
-        <p>"Buy Me a Coffee" is a cutting-edge digital platform transforming the way people network by merging the ease of online interaction with the genuineness of in-person meetings. In a world increasingly reliant on virtual connections, this platform motivates users, especially students and young professionals, to engage in valuable face-to-face discussions over coffee. It's designed to foster authentic relationships, encourage knowledge exchange, and improve networking and social abilities through informal coffee-based meetups.</p>
-      </DescriptionBox>
-
-      <div className='justify-center mt-20'>
-        <TypographyH2 className='border-b-0 mt-1 text-center'>What you can do</TypographyH2>
-        <div className='justify-center flex'>
-          <div className='grid grid-cols-1 md:grid-cols-3 w-[1200px] mt-10 gap-5'>
-            <WhatYouCanDoSubSection icon={FaGear} section_title="Setup"> 
-              <p>Set Up Your Profile and Digital Business Card.</p>
-            </WhatYouCanDoSubSection>
-            <WhatYouCanDoSubSection icon={IoPeople} section_title="Pairing">
-              <p>Connections based on interests, industries, and goals, supporting tag or name searches.</p>
-            </WhatYouCanDoSubSection>
-            <WhatYouCanDoSubSection icon={GiCoffeeCup} section_title="Coffee Chat"> 
-              <p>Upon mutual agreement, a shared calendar facilitates easy scheduling of time and location.</p>
-            </WhatYouCanDoSubSection>
-          </div>
+    <div className='bg-white w-full'>
+      <div className='bg-main rounded-b-lg md:rounded-b-3xl md:py-20 py-20 md:px-10 px-5'>
+        <HeaderSection {...info.headerSection} />
+        <hr className='my-10 md:my-20' />
+        <TitleSection {...info.titleSection} />
+        <div className='mt-20 flex flex-col items-center md:items-stretch md:flex-row md:justify-around gap-10'>
+          {info.infoCards.map(card => (
+            <InfoCard key={card.title} {...card} />
+          ))}
         </div>
       </div>
-      
-
-
-      <div className='flex flex-col mt-20 mb-20'>
-        <TypographyH2 className='border-b-0 mt-1 text-center'>Why BMaC</TypographyH2>
-        <div className='justify-center flex w-full'>
-          <div className='w-[1200px] mt-10 text-center'>
-            <p>"Buy Me a Coffee" is a cutting-edge digital platform transforming the way people network by merging the ease of online interaction with the genuineness of in-person meetings. In a world increasingly reliant on virtual connections, this platform motivates users, especially students and young professionals, to engage in valuable face-to-face discussions over coffee. It's designed to foster authentic relationships, encourage knowledge exchange, and improve networking and social abilities through informal coffee-based meetups.</p> </div>
-        </div>
-      </div>
-
-
-    </RootContainer>
-  );
+      <IntroSection {...info.introSection} />
+    </div>
+  )
 }
 
 export default BuyMeACoffee
