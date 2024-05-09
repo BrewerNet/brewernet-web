@@ -1,30 +1,29 @@
-'use client'
+"use client"
+import { faCircleInfo, faHandshake } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useState } from 'react';
 
-import { faCircleInfo, faHandshake } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Image from 'next/image'
-import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
-import styles from './contact.module.css'
-import { PageProps } from '@/lib/interfaces'
-import { TypographyH1, TypographyH4, TypographyParagraph } from '@/components/shared/Typography/Typography'
+import styles from './contact.module.css';
 
-const ContactPage: React.FC<PageProps> = () => {
-  const [order, setOrder] = useState([0, 1, 2])
-  const [selected, setSelected] = useState('query')
+import { TypographyH1, TypographyH4, TypographyParagraph } from '@/components/shared/Typography/Typography';
+
+const ContactPage = () => {
+  const [selected, setSelected] = useState('query');
   const handleButtonClick = (button: string) => {
-    setSelected(button)
-  }
+    setSelected(button);
+  };
 
   type DescriptionType = {
-    [key: string]: { desc: string; email: string }
-  }
+    [key: string]: { desc: string; email: string };
+  };
 
   const images = [
     { href: '/buy-me-a-coffee', src: '/logos/bmac-bubble-logo.png', alt: "BMaC's Favicon" },
     { href: '/', src: '/logos/bn-logo-white.png', alt: "BrewerNet's Favicon" },
     { href: '/the-coffee-bean', src: '/logos/tcb-bubble-logo.png', alt: "TCB's Favicon" }
-  ]
+  ];
 
   const description: DescriptionType = {
     query: {
@@ -35,16 +34,18 @@ const ContactPage: React.FC<PageProps> = () => {
       desc: 'Join BrewerNet\'s Affiliate Program and be a part of our mission to enhance career development through networking. This program is a fantastic opportunity for content creators, educators, and career influencers to collaborate with us. By promoting "The Coffee Bean" and "Buy Me a Coffee", you can earn commissions while helping others in their professional journey. Together, we can create meaningful connections and support those transitioning from academic life to the workforce.',
       email: 'affiliate@brewernet.io'
     }
-  }
+  };
 
   return (
     <div className={styles.contactWrapper}>
       <TypographyH1 className='text-center text-white border-b-4'>Contact us</TypographyH1>
       <div className={styles.contactLogo}>
-        {order.map((index, i) => (
-          <div key={index} className={styles.imageTransition}>
-            <Link href={images[index].href}>
-              <Image src={images[index].src} alt={images[index].alt} width={i === 1 ? 150 : 400} height={0}  style={{ width: '100%', height: 'auto' }}/>
+        {images.map((image, i) => (
+          <div key={i} className={styles.imageTransition}>
+            <Link href={image.href}>
+              <a>
+                <Image src={image.src} alt={image.alt} width={400} height={400} layout="responsive" />
+              </a>
             </Link>
           </div>
         ))}
@@ -65,14 +66,11 @@ const ContactPage: React.FC<PageProps> = () => {
           </div>
         </div>
       </div>
-      <button className={styles.contactEmailButton} onClick={() => (window.location.href = `${description[selected].email}`)}>
+      <button className={styles.contactEmailButton} onClick={() => (window.location.href = `mailto:${description[selected].email}`)}>
         <TypographyH4>{description[selected].email}</TypographyH4>
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default ContactPage
-
-{
-}
+export default ContactPage;

@@ -2,12 +2,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { TypographyH4 } from '../Typography/Typography'
+import { GoArrowUpRight } from 'react-icons/go'
 import { LuMenu } from 'react-icons/lu'
 import { RxCross1 } from 'react-icons/rx'
-import { GoArrowUpRight } from 'react-icons/go'
 
-function NavButton({ children, link, className = '' }) {
+import { NavButtonProps } from '@/lib/interfaces'
+
+import { TypographyH4 } from '../Typography/Typography'
+
+const NavButton: React.FC<NavButtonProps> = ({ children, link, className = '' }) => {
   return (
     <Link href={link} passHref>
       <button className={`inline-flex items-center text-main bg-white hover:bg-main hover:text-white py-1 px-4 rounded ${className}`}>

@@ -1,15 +1,12 @@
-import React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 import { GoArrowUpRight } from 'react-icons/go'
+
+import { IntroSectionProps } from '@/lib/interfaces'
+
 import { TypographyH3 } from '@/components/shared/Typography/Typography'
 
-interface IntroSectionProps {
-  content: string
-  icons: Array<{
-    src: string
-    alt: string
-  }>
-}
 
 const IntroSection: React.FC<IntroSectionProps> = ({ content, icons, link, href }) => {
   return (
@@ -24,7 +21,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({ content, icons, link, href 
       </div>
       <div className='flex flex-row justify-evenly md:flex-1 md:flex md:flex-col md:justify-center md:items-center'>
         {icons.map((icon, index) => (
-          <img key={index} src={icon.src} alt={icon.alt} className='md:mb-10 w-[30px] md:w-[100px]' />
+          <Image key={index} src={icon.src} alt={icon.alt} className='md:mb-10 w-[30px] md:w-[100px]' />
         ))}
       </div>
     </div>

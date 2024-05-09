@@ -1,11 +1,13 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { LuFacebook, LuInstagram, LuLinkedin, LuTwitter } from 'react-icons/lu'
 import { GoArrowUpRight } from 'react-icons/go'
+import { LuFacebook, LuInstagram, LuLinkedin, LuTwitter } from 'react-icons/lu'
+
+import { SocialLinkProps } from '@/lib/interfaces'
+
 import { TypographyH1, TypographyH3, TypographyH4, TypographySmall } from '../Typography/Typography'
 
-function SocialLink({ href, children }) {
+function SocialLink({ href, children }: SocialLinkProps) {
   return (
     <Link href={href} className='text-white hover:text-sub' aria-label={href}>
       <TypographyH4>{children}</TypographyH4>

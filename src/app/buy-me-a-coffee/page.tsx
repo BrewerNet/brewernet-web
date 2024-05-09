@@ -2,13 +2,15 @@ import React from 'react'
 import { FaUserGear } from 'react-icons/fa6'
 import { IoMdPeople } from 'react-icons/io'
 import { MdOutlineCoffee } from 'react-icons/md'
+
 import { PageProps } from '@/lib/interfaces'
+
 import HeaderSection from '@/components/shared/HeaderSection'
-import TitleSection from '@/components/shared/TitleSection'
-import IntroSection from '@/components/shared/IntroSection'
 import InfoCard from '@/components/shared/InfoCard'
+import IntroSection from '@/components/shared/IntroSection'
 import AppleStoreBtn from '@/components/shared/LinkButton/AppleStoreBtn'
 import GooglePlayBtn from '@/components/shared/LinkButton/GooglePlayBtn'
+import TitleSection from '@/components/shared/TitleSection'
 
 const info = {
   headerSection: {
@@ -17,7 +19,7 @@ const info = {
     subHeaderText2: '“Buy Me a Coffee” is a cutting-edge platform',
     paragraphText:
       'Merging online networking with in-person meetings, focusing on genuine connections and knowledge sharing through coffee conversations, enhancing both professional and personal growth.',
-    buttons: [<AppleStoreBtn href='https://apple.com' />, <GooglePlayBtn href='https://play.google.com' />]
+    buttons: [<AppleStoreBtn href='https://apple.com' key='apple'/>, <GooglePlayBtn href='https://play.google.com' key='apple'/>]
   },
   titleSection: {
     imgSrc: '/logos/bmac-bubble-logo-full.png',

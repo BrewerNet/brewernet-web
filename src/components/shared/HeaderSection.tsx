@@ -1,7 +1,16 @@
 import React from 'react'
+
+import { HeaderSectionProps } from '@/lib/interfaces'
+
 import { TypographyH1, TypographyH4, TypographyParagraph } from '@/components/shared/Typography/Typography'
 
-const HeaderSection = ({ headerText, subHeaderText1, subHeaderText2, paragraphText, buttons = [] }) => {
+const HeaderSection: React.FC<HeaderSectionProps> = ({
+  headerText,
+  subHeaderText1,
+  subHeaderText2,
+  paragraphText,
+  buttons = []
+}) => {
   return (
     <div className='bg-main flex flex-col md:flex-row md:justify-between gap-10'>
       <div className='flex flex-1 flex-col gap-10 md:gap-10 self-center'>

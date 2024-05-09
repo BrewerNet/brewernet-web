@@ -1,13 +1,15 @@
 import React from 'react'
-import { BsBuildings } from 'react-icons/bs'
 import { BiWorld } from 'react-icons/bi'
+import { BsBuildings } from 'react-icons/bs'
 import { FaPeopleGroup } from 'react-icons/fa6'
+
 import { PageProps } from '@/lib/interfaces'
+
 import HeaderSection from '@/components/shared/HeaderSection'
-import TitleSection from '@/components/shared/TitleSection'
-import IntroSection from '@/components/shared/IntroSection'
 import InfoCard from '@/components/shared/InfoCard'
+import IntroSection from '@/components/shared/IntroSection'
 import DiscordBtn from '@/components/shared/LinkButton/DiscordBtn'
+import TitleSection from '@/components/shared/TitleSection'
 
 const info = {
   headerSection: {
@@ -16,7 +18,7 @@ const info = {
     subHeaderText2: '“The Coffee Bean” is tailored for professional networking.',
     paragraphText:
       'Hosted on Discord. It acts as a hub for students to collaborate on innovative startup ideas. A notable component of this community is the mentorship program, where experienced professionals offer guidance on career-related topics to students. ',
-    buttons: [<DiscordBtn href='https://discord.gg/jsm8FA8E' />]
+    buttons: [<DiscordBtn href='https://discord.gg/jsm8FA8E' key='discord'/>]
   },
   titleSection: {
     imgSrc: '/logos/tcb-bubble-logo-full.png',

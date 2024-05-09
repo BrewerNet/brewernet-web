@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { IoLogoDiscord } from 'react-icons/io5'
+
 import { TypographyH3 } from '@/components/shared/Typography/Typography'
 
 const DiscordBtn = ({ href }: { href: string }) => {
