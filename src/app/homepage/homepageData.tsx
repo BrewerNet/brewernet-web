@@ -1,6 +1,6 @@
-import btcbFaviconC from '../../../public/logo/bmac-favicon-c.png'
-import tcbFaviconC from '../../../public/logo/tcb-favicon-c.png'
-import placeholderImage from '../../../public/placeholderImage.png'
+import bmacLogo from '../../../public/logos/bmac-app-logo-full.png'
+import tcbLogo from '../../../public/logos/tcb-app-logo-full.png'
+import placeholderImage from '../../../public/placeholder.png'
 
 export const teamData = [
   {
@@ -40,7 +40,7 @@ export const cardData = [
     title: 'The Coffee Bean',
     description:
       'The Coffee Bean is a social networking community on Discord created to provide students with a space to discuss homework, share campus life, and connect with teammates for academic projects, side projects, or startup ventures. This server is completely free and open to students from all educational institutions.',
-    imageSrc: tcbFaviconC,
+    imageSrc: tcbLogo,
     altText: 'tcb-favicon-c',
     buttonContent: 'about TCB',
     linkHref: 'the-coffee-bean',
@@ -50,8 +50,8 @@ export const cardData = [
     title: 'Buy Me a Coffee',
     description:
       'Buy Me a Coffee is an innovative platform designed to revolutionize networking by blending digital connections with real-world interactions. Our goal is to encourage individuals to engage in meaningful conversations over coffee, fostering genuine relationships and knowledge sharing.',
-    imageSrc: btcbFaviconC,
-    altText: 'btcb-favicon-c',
+    imageSrc: bmacLogo,
+    altText: 'bmac-logo',
     buttonContent: 'about BMac',
     linkHref: 'buy-me-a-coffee',
     isImageOnRight: true

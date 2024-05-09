@@ -1,9 +1,9 @@
 import Image, { StaticImageData } from 'next/image'
+import Link from 'next/link';
 import React from 'react';
 
 import { TypographyH3,TypographyLarge } from '../../../components/shared/Typography/Typography';
 import { Button } from '../../../components/ui/button';
-import Link from 'next/link';
 
 interface CardContainerProps {
   title: string;

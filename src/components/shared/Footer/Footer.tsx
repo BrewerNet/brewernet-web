@@ -1,47 +1,57 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-import { LuFacebook, LuInstagram, LuLinkedin,LuTwitter } from 'react-icons/lu';
+import Link from 'next/link'
+import React from 'react'
+import { GoArrowUpRight } from 'react-icons/go'
+import { LuFacebook, LuInstagram, LuLinkedin, LuTwitter } from 'react-icons/lu'
 
-import { TypographyLead, TypographySmall } from '../Typography/Typography';
+import { SocialLinkProps } from '@/lib/interfaces'
+
+import { TypographyH1, TypographyH3, TypographyH4, TypographySmall } from '../Typography/Typography'
+
+function SocialLink({ href, children }: SocialLinkProps) {
+  return (
+    <Link href={href} className='text-white hover:text-sub' aria-label={href}>
+      <TypographyH4>{children}</TypographyH4>
+    </Link>
+  )
+}
 
 export default function Footer() {
   return (
-    <div className='bottom-0 left-0 static h-[15%] w-full bg-[#07C1FC] flex flex-col items-center'>
-      <div className='flex flex-row justify-between align-top px-3 lg:px-[3%] max-w-[1280px] w-full'>
-        <div className='w-[60%] h-[80%] left-0 flex flex-row justify-start items-center'>
-          <Image src='/brewernet-favicon.png' alt="icon" width={100} height={100} className='h-full w-auto' />
-          <TypographyLead className='font-bold text-white text-wrap w-2/3 lg:text-2xl'>
-            Connections Make the World Better
-          </TypographyLead>
-        </div>
-        <div className='w-fit flex flex-col items-end justify-evenly'>
-          <div className='flex flex-row justify-evenly items-center text-white text-sm'>
-            <Image src='/bmac-favicon.png' alt='bmac icon' width={50} height={50} />
-            <Link href="/buy-me-a-coffee">
-                <TypographySmall>Buy Me a Coffee</TypographySmall>
-            </Link>
-          </div>
-          <div className='flex flex-row justify-evenly items-center text-white text-sm'>
-            <Image src='/tcb-favicon.png' alt='tcb icon' width={50} height={50} />
-            <Link href="/the-coffee-bean">
-              <TypographySmall>The Coffee Bean</TypographySmall>
-            </Link>
-          </div>
-          <div className='flex flex-row w-4/5 items-center justify-evenly text-white'>
+    <div className='w-full bg-main py-4 md:px-10 px-5'>
+      <div className='flex my-4 items-baseline justify-between'>
+        <Link href='/contact'>
+          <TypographyH1 className='text-sub hover:text-white flex w-full'>
+            Contact us <GoArrowUpRight className='ml-3 my-auto' />
+          </TypographyH1>
+        </Link>
+        <div className='flex space-x-4'>
+          <SocialLink href='https://www.facebook.com'>
             <LuFacebook />
-            <LuTwitter />
+          </SocialLink>
+          <SocialLink href='https://www.linkedin.com/company/brewernet/'>
             <LuLinkedin />
+          </SocialLink>
+          <SocialLink href='https://www.instagram.com'>
             <LuInstagram />
-          </div>
+          </SocialLink>
+          <SocialLink href='https://www.twitter.com'>
+            <LuTwitter />
+          </SocialLink>
         </div>
       </div>
-      <div className='h-1/5 w-full border-t flex justify-center'>
-        <div className='max-w-[1280px] w-full flex flex-row justify-between text-white text-xs px-3 lg:px-[3%] border-0'>
-          <TypographySmall>@2024, Brewerner Pty Ltd.</TypographySmall>
-          <TypographySmall>All Rights Reserved.</TypographySmall> 
+      <hr className='w-full mx-auto bg-white rounded' />
+      <div className='flex my-8 md:items-baseline md:flex-row md:justify-between flex-col gap-5 items-center'>
+        <TypographyH3 className='italic text-white font-write'>"Connections Make the World Better"</TypographyH3>
+        <div className='flex gap-5'>
+          <SocialLink href='/buy-me-a-coffee'>Buy Me a Coffee</SocialLink>
+          <SocialLink href='/the-coffee-bean'>The Coffee Bean</SocialLink>
         </div>
+      </div>
+      <hr className='w-full mx-auto bg-white rounded' />
+      <div className='flex mt-4 justify-between'>
+        <TypographySmall className='text-white'>©2024 Brewernet Pty Ltd.</TypographySmall>
+        <TypographySmall className='text-white'>ALL RIGHTS RESERVED</TypographySmall>
       </div>
     </div>
-  );
+  )
 }

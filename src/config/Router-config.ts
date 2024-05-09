@@ -41,7 +41,7 @@ export const PUBLIC_ROUTE_CONFIG: Record<string, Route> = {
   },
   [ROUTE_KEY.CONTACT]: {
     name: 'contact',
-    title: 'BrewerNet | Contact Us',
+    title: 'BrewerNet | Contact us',
     path: '/contact',
     component: CONTACT
   }
