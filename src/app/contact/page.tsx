@@ -15,17 +15,13 @@ export const metadata: Metadata = {
 }
 
 const ContactPage = () => {
-  type DescriptionType = {
-    [key: string]: { desc: string; email: string }
-  }
-
   const images = [
     { href: '/buy-me-a-coffee', src: '/logos/bmac-text-logo.png', alt: "BMaC's Favicon" },
     { href: '/', src: '/logos/bn-favicon-01.png', alt: "BrewerNet's Favicon" },
     { href: '/the-coffee-bean', src: '/logos/tcb-text-logo.png', alt: "TCB's Favicon" }
   ]
 
-  const description: DescriptionType = {
+  const description = {
     query: {
       desc: 'At BrewerNet, your journey is important to us. Facing challenges or have questions about "The Coffee Bean" Discord community or the "Buy Me a Coffee" app? Our Query Section is designed for you. Here, you can seek guidance, gain insights, and find answers from our dedicated team. We understand the hurdles of transitioning from academia to professional life and are committed to smoothing your path with prompt and helpful responses. Reach out to us – let\'s make connections that propel your career forward.',
       email: 'query@brewernet.io'

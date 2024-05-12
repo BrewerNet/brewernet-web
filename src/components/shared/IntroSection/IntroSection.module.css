@@ -1,4 +1,4 @@
-#bmacIntro {
+.intro {
   @apply font-main
   md:text-xl 
   md:tracking-wider 
@@ -8,36 +8,13 @@
   lg:leading-10;
 }
 
-#bmacIntro > span {
+.intro > span {
   @apply inline
   md:block;
 }
 
-.effectOne {
-  @apply font-extrabold
-  text-main;
-}
-
-.effectTwo {
-  @apply font-write
-  text-main
-  underline
-  font-bold
-  italic;
-}
-
-.effectThree {
-  @apply font-write
-  text-red;
-}
-
-.specialTerm {
-  @apply font-write
-  text-main;
-}
-
 @media (min-width: 768px) {
-  .animateStart#bmacIntro > span {
+  .animateStart.intro > span {
     transform: translateY(-50px);
     opacity: 0;
     visibility: hidden;
@@ -48,78 +25,78 @@
     visibility: visible;
   }
 
-  .animateStart#bmacIntro > span:nth-child(1) {
+  .animateStart.intro > span:nth-child(1) {
     animation-delay: 1.5s;
   }
-  .animateStart#bmacIntro span:nth-child(2) {
+  .animateStart.intro span:nth-child(2) {
     animation-delay: 1.4s;
   }
-  .animateStart#bmacIntro span:nth-child(3) {
+  .animateStart.intro span:nth-child(3) {
     animation-delay: 1.3s;
   }
-  .animateStart#bmacIntro span:nth-child(4) {
+  .animateStart.intro span:nth-child(4) {
     animation-delay: 1.2s;
   }
-  .animateStart#bmacIntro span:nth-child(5) {
+  .animateStart.intro span:nth-child(5) {
     animation-delay: 1.1s;
   }
-  .animateStart#bmacIntro span:nth-child(6) {
+  .animateStart.intro span:nth-child(6) {
     animation-delay: 1s;
   }
-  .animateStart#bmacIntro span:nth-child(7) {
+  .animateStart.intro span:nth-child(7) {
     animation-delay: 0.9s;
   }
-  .animateStart#bmacIntro span:nth-child(8) {
+  .animateStart.intro span:nth-child(8) {
     animation-delay: 0.8s;
   }
-  .animateStart#bmacIntro span:nth-child(9) {
+  .animateStart.intro span:nth-child(9) {
     animation-delay: 0.7s;
   }
-  .animateStart#bmacIntro span:nth-child(10) {
+  .animateStart.intro span:nth-child(10) {
     animation-delay: 0.6s;
   }
-  .animateStart#bmacIntro span:nth-child(11) {
+  .animateStart.intro span:nth-child(11) {
     animation-delay: 0.5s;
   }
 
-  .animateDisappear#bmacIntro > span {
+  .animateDisappear.intro > span {
     animation-name: disappearAnimation;
     animation-duration: 3s;
     animation-fill-mode: forwards;
     animation-timing-function: ease;
   }
 
-  .animateDisappear#bmacIntro > span:nth-child(1) {
+  .animateDisappear.intro > span:nth-child(1) {
     animation-delay: 0.5s;
   }
-  .animateDisappear#bmacIntro > span:nth-child(2) {
+  .animateDisappear.intro > span:nth-child(2) {
     animation-delay: 0.6s;
   }
-  .animateDisappear#bmacIntro > span:nth-child(3) {
+  .animateDisappear.intro > span:nth-child(3) {
     animation-delay: 0.7s;
   }
-  .animateDisappear#bmacIntro > span:nth-child(4) {
+  .animateDisappear.intro > span:nth-child(4) {
     animation-delay: 0.8s;
   }
-  .animateDisappear#bmacIntro > span:nth-child(5) {
+  .animateDisappear.intro > span:nth-child(5) {
     animation-delay: 0.9s;
   }
-  .animateDisappear#bmacIntro > span:nth-child(6) {
+  .animateDisappear.intro > span:nth-child(6) {
     animation-delay: 1s;
   }
-  .animateDisappear#bmacIntro > span:nth-child(7) {
+  .animateDisappear.intro > span:nth-child(7) {
     animation-delay: 1.1s;
   }
-  .animateDisappear#bmacIntro > span:nth-child(8) {
+  .animateDisappear.intro > span:nth-child(8) {
     animation-delay: 1.2s;
   }
-  .animateDisappear#bmacIntro > span:nth-child(9) {
+  .animateDisappear.intro > span:nth-child(9) {
     animation-delay: 1.3s;
   }
-  .animateDisappear#bmacIntro > span:nth-child(10) {
+  .animateDisappear.intro > span:nth-child(10) {
     animation-delay: 1.4s;
   }
-  .animateDisappear#bmacIntro > span:nth-child(11) {
+  .animateDisappear.intro > span:nth-child(11) {
     animation-delay: 1.5s;
   }
 

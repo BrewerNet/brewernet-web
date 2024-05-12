@@ -4,7 +4,9 @@ import { TypographyH4, TypographyParagraph } from '@/components/shared/Typograph
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleInfo, faHandshake } from '@fortawesome/free-solid-svg-icons'
 
-const ContactInfoSection = ({ description }) => {
+import { ContactInfoSectionProps } from '@/lib/interfaces'
+
+const ContactInfoSection: React.FC<ContactInfoSectionProps> = ({ description }) => {
   const [selected, setSelected] = useState('query')
 
   const handleButtonClick = (button: string) => {

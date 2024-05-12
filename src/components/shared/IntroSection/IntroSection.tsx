@@ -48,9 +48,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({ content, icons, link, href 
     <div ref={ref} className='bg-white w-full'>
       <div className='max-w-[1024px] mx-auto flex flex-col-reverse lg:flex-row lg:px-20 md:px-20 px-8 py-20 gap-10 lg:items-center'>
         <div className='flex flex-col justify-center mx-auto gap-10'>
-          <p id={styles.bmacIntro} className={`${isVisible ? styles.animateStart : styles.animateDisappear}`}>
-            {content}
-          </p>
+          <p className={`${styles.intro} ${isVisible ? styles.animateStart : styles.animateDisappear}`}>{content}</p>
           <Link className='hover:text-main md:self-start self-center' href={href}>
             <TypographyH3 className='w-full flex border-b-2 border-black hover:border-main'>
               {link} <GoArrowUpRight className='ml-1 my-auto' />
