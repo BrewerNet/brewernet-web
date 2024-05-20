@@ -18,7 +18,6 @@ import { TypographyH1 } from '../../components/shared/Typography/Typography'
 
 
 const StoryCarousel = () => {
-
   const AUTO_PLAY_INTERVAL = 6000
   return (
     <Carousel plugins={[Autoplay({ delay: AUTO_PLAY_INTERVAL })]} opts={{ loop: true }} className='max-w-[1440px] mx-auto'>

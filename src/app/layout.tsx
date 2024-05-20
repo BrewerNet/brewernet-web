@@ -1,11 +1,14 @@
 import { ReactNode } from 'react'
 
-import './globals.css'
+import "@/styles/globals.css"
 
 import Footer from '@/components/shared/Footer'
 
 import Providers from './Providers'
 import Navbar from '../components/shared/Navbar/Navbar'
+
+
+
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
