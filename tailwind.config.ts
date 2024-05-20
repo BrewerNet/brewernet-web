@@ -9,12 +9,23 @@ const config = {
       center: true,
       padding: '2rem',
       screens: {
+        lg: '1200px',
         '2xl': '1400px'
       }
     },
+    fontFamily: {
+      main: ['TT Firs Neue light'],
+      sub: ['Manrope'],
+      write: ['vollkron'],
+      sans: ['Georgia', 'system-ui'],
+      serif: ['ui-serif', 'Georgia']
+    },
     extend: {
       colors: {
-        main: '#07C1FC',
+        main: '#393E95',
+        sub: '#F6EF47',
+        gray: '#91907C',
+        red: '#F14E3A',
         font: '#272828',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

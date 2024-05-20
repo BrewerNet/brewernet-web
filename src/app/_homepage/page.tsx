@@ -1,7 +1,7 @@
 'use client'
 
 import Autoplay from 'embla-carousel-autoplay'
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 
 import { PageProps } from '@/lib/interfaces'
 
@@ -16,28 +16,20 @@ import { FlexContainer } from '../../components/shared/layout/FlexContainer'
 import { TypographyH1 } from '../../components/shared/Typography/Typography'
 
 
-  
-const AUTO_PLAY_INTERVAL = 6000
-
-const StoryCarouselItem = ({ index, content, progress, durationPerItem }) => {
-  return (
-    <Card className='border-transparent bg-primary w-full h-auto aspect-video'>
-      <CardContent className='flex aspect-auto items-center justify-center p-6'>
-        <img src={`https://picsum.photos/1920/1080?random=${index}`} alt={`Slide ${index}`} className='max-w-[500px] w-full h-auto' />
-        
-      </CardContent>
-    </Card>
-  )
-};
 
 const StoryCarousel = () => {
 
+  const AUTO_PLAY_INTERVAL = 6000
   return (
     <Carousel plugins={[Autoplay({ delay: AUTO_PLAY_INTERVAL })]} opts={{ loop: true }} className='max-w-[1440px] mx-auto'>
       <CarouselContent>
         {Array.from({ length: 4 }).map((_, index) => (
           <CarouselItem key={index}>
-            <StoryCarouselItem index={index} content={{title:"start", description: "this is first page"}} interval={AUTO_PLAY_INTERVAL} />
+            <Card className='border-transparent bg-primary w-full h-auto aspect-video'>
+              <CardContent className='flex aspect-auto items-center justify-center p-6'>
+                <img src={`https://picsum.photos/1920/1080?random=${index}`} alt={`Slide ${index}`} className='max-w-[500px] w-full h-auto' />
+              </CardContent>
+            </Card>
           </CarouselItem>
         ))}
       </CarouselContent>
