@@ -10,11 +10,16 @@ import { FlexContainer } from '../../components/shared/layout/FlexContainer'
 import { TypographyH1, TypographyH2, TypographyLarge } from '../../components/shared/Typography/Typography'
 import banner from '../../../public/banner.svg'
 
-const Homepage: React.FC<PageProps> = () => {
+import { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: 'BrewerNet | Home'
+}
+
+const Homepage: React.FC<PageProps> = () => {
   return (
     <div>
-      <div className='mb-24'>
+      <div className='mb-24 '>
         <FlexContainer classname='relative'>
           <Image src={banner} alt='banner image' sizes='100vw' className='w-full h-auto ' width={1440} height={740} />
           <div className='absolute text-white text-center w-5/6'>
@@ -30,17 +35,17 @@ const Homepage: React.FC<PageProps> = () => {
         <TypographyH1>Product</TypographyH1>
       </FlexContainer>
       {cardData.map((card, index) => (
-      <CardContainer
-        key={index}
-        title={card.title}
-        description={card.description}
-        imageSrc={card.imageSrc}
-        altText={card.altText}
-        buttonContent={card.buttonContent}
-        linkHref={card.linkHref}
-        isImageOnRight={card.isImageOnRight}
-      />
-    ))}
+        <CardContainer
+          key={index}
+          title={card.title}
+          description={card.description}
+          imageSrc={card.imageSrc}
+          altText={card.altText}
+          buttonContent={card.buttonContent}
+          linkHref={card.linkHref}
+          isImageOnRight={card.isImageOnRight}
+        />
+      ))}
       <FlexContainer classname='mb-16 '>
         <TypographyH1>Team</TypographyH1>
       </FlexContainer>
